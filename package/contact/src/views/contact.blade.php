@@ -280,6 +280,22 @@
             border: none;
             border-bottom: 2px solid #ccc
         }
+        input[type='number'] {
+            height: 25px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: 0;
+            border: none;
+            border-bottom: 2px solid #ccc
+        }
+        input[type='email'] {
+            height: 25px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: 0;
+            border: none;
+            border-bottom: 2px solid #ccc
+        }
 
         .input {
             position: relative;
@@ -548,25 +564,26 @@
                     </span>
                 </div>
             </div>
-            <div class="right-side">
+            <form method="post" action="{{route("send")}}" class="right-side">
+                @csrf
                 <div class="card-details">
                     <div class="input-group">
                         <div class="input">
-                            <input type="text" required="required">
+                            <input type="text" name="first_name" required="required">
                             <span>First Name</span>
                         </div>
                         <div class="input">
-                            <input type="text" required="required">
+                            <input type="text" name="last_name" required="required">
                             <span>Last Name</span>
                         </div>
                     </div>
                     <div class="input-group">
                         <div class="input">
-                            <input type="text" required="required">
+                            <input type="email" name="email" required="required">
                             <span>E-mail</span>
                         </div>
                         <div class="input">
-                            <input type="text" required="required">
+                            <input type="number" name="phone_number" required="required">
                             <span>Phone no.</span>
                         </div>
                     </div>
@@ -575,29 +592,29 @@
                     <h6>What was the content you need?</h6>
                     <div class="centered">
                         <div>
-                            <input type="radio" name="rr" id="r1">
+                            <input type="radio" checked name="content" id="r1" value="html">
                             <label for="r1">HTML</label>
                         </div>
                         <div>
-                            <input type="radio" name="rr" id="r2">
+                            <input type="radio" name="content" id="r2" value="css">
                             <label for="r2">CSS</label>
                         </div>
                         <div>
-                            <input type="radio" name="rr" id="r3">
+                            <input type="radio" name="content" id="r3" value="js">
                             <label for="r3">Javascript</label>
                         </div>
                         <div>
-                            <input type="radio" name="rr" id="r4">
+                            <input type="radio" name="content" id="r4" value="jq">
                             <label for="r4">Jquery</label>
                         </div>
                     </div>
                     <div class="text-area">
-                        <textarea required="required"></textarea>
+                        <textarea name="msg" required="required"></textarea>
                         <span>Message</span>
                     </div>
                     <input class="btn btn-primary button" type="submit">
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
