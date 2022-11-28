@@ -1,0 +1,19 @@
+{
+    "name": "bitfumes/contact",
+    "description": "a first step in the world of laravel packages i wish that it become helpful",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kaoutar boudouft",
+            "email": "kaoutarboudouft2@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bitfumes\\Contact\\": "src/"
+        }
+    }
+}
