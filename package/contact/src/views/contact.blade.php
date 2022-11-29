@@ -533,8 +533,13 @@
     </style>
 </head>
 <body>
+@if(\Illuminate\Support\Facades\Session::has('flash_message'))
+<div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+</div>
+@endif
 <div class="container">
-    <div class="card">
+    <div class="card col-12">
         <div class="form">
             <div class="left-side">
                 <div class="top">
@@ -592,24 +597,24 @@
                     <h6>What was the content you need?</h6>
                     <div class="centered">
                         <div>
-                            <input type="radio" checked name="content" id="r1" value="html">
+                            <input type="radio" checked name="prefer_content" id="r1" value="html">
                             <label for="r1">HTML</label>
                         </div>
                         <div>
-                            <input type="radio" name="content" id="r2" value="css">
+                            <input type="radio" name="prefer_content" id="r2" value="css">
                             <label for="r2">CSS</label>
                         </div>
                         <div>
-                            <input type="radio" name="content" id="r3" value="js">
+                            <input type="radio" name="prefer_content" id="r3" value="js">
                             <label for="r3">Javascript</label>
                         </div>
                         <div>
-                            <input type="radio" name="content" id="r4" value="jq">
+                            <input type="radio" name="prefer_content" id="r4" value="jq">
                             <label for="r4">Jquery</label>
                         </div>
                     </div>
                     <div class="text-area">
-                        <textarea name="msg" required="required"></textarea>
+                        <textarea name="message" required="required"></textarea>
                         <span>Message</span>
                     </div>
                     <input class="btn btn-primary button" type="submit">
